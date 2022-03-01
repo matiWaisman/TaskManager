@@ -78,6 +78,12 @@ function App() {
   return (
     <>
       <div className="backgound">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Task Manager Mern</title>
+          <meta name="description" content="Task Manager Mern" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
         <div className="wrapper">
           <header>Todo app MERN</header>
           <InputField guardarTarea={guardarTarea} msg="Add your new task" />
