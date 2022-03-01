@@ -5,6 +5,7 @@ import InputField from "./Components/InputField";
 import Footer from "./Components/Footer";
 import ListadoTasks from "./Components/ListadoTasks";
 import PageFooter from "./Components/pageFooter";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [listadoTasks, setListadoTasks] = useState([]);
