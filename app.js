@@ -30,14 +30,9 @@ const start = async () => {
 };
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../task-manager-front/build")));
+  app.use(express.static(path.join(__dirname, "/client/build")));
   app.get("*", (req, res) => {
-    const indexPath = path.join(
-      __dirname,
-      "../task-manager-front",
-      "build",
-      "index.html"
-    );
+    const indexPath = path.join(__dirname, "client", "build", "index.html");
     res.sendFile(indexPath);
   });
 } else {
