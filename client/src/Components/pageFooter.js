@@ -1,11 +1,21 @@
 import React from "react";
 import "../footer.css";
+import { CgProfile } from "react-icons/cg";
 
 const PageFooter = () => {
   return (
     <>
       <footer className="page-footer">
         <span className="page-footer-name"> Built by Matías Waisman </span>
+        <a
+          href={require("../images/CV.pdf")}
+          aria-label="GitHub"
+          target="_blank"
+          rel="noreferrer"
+          download
+        >
+          <CgProfile className="footer-icon" />
+        </a>
         <div className="footer-icons">
           <a href="https://github.com/MatiWaisman">
             <svg
