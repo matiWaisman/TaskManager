@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const apiRouter = require("./routes/api");
 const connectDB = require("./db/connect");
-require("dotenv").config();
 const notFound = require("./middleware/notFound");
 const path = require("path");
 
