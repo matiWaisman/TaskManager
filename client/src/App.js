@@ -15,7 +15,7 @@ function App() {
   const [TareaAEditar, guardarTareaAEditar] = useState();
 
   const getTasks = async () => {
-    const response = await fetch("/api/v1/tasks");
+    const response = await fetch("https://tm-server.vercel.app/api/v1/tasks");
     const responseJson = await response.json();
     var cantidadUnfinished = 0;
     if (responseJson) {
@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     const subirTareaADb = async () => {
       try {
-        await axios.post("/api/v1/tasks", {
+        await axios.post("https://tm-server.vercel.app/api/v1/tasks", {
           name: Tarea.name,
           completed: Tarea.completed,
         });
@@ -53,10 +53,13 @@ function App() {
   useEffect(() => {
     const editarTask = async () => {
       try {
-        await axios.patch(`/api/v1/tasks/${TareaAEditar._id}`, {
-          name: TareaAEditar.name,
-          completed: TareaAEditar.completed,
-        });
+        await axios.patch(
+          `https://tm-server.vercel.app/api/v1/tasks/${TareaAEditar._id}`,
+          {
+            name: TareaAEditar.name,
+            completed: TareaAEditar.completed,
+          }
+        );
       } catch (error) {}
       getTasks();
     };
@@ -65,7 +68,9 @@ function App() {
 
   const deleteTask = async (TareaParaEliminar) => {
     try {
-      await axios.delete(`/api/v1/tasks/${TareaParaEliminar._id}`);
+      await axios.delete(
+        `https://tm-server.vercel.app/api/v1/tasks/${TareaParaEliminar._id}`
+      );
     } catch (error) {}
     getTasks();
   };
