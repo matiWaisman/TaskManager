@@ -6,7 +6,6 @@ app.use(cors());
 const apiRouter = require("./routes/api");
 const connectDB = require("./db/connect");
 const notFound = require("./middleware/notFound");
-const cors = require("cors");
 const path = require("path");
 
 app.use(express.static("./public"));
